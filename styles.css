@@ -23,6 +23,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: var(--sans);
   line-height: 1.6;
   letter-spacing: -0.01em;
@@ -355,13 +356,13 @@ textarea {
 }
 
 .hero-image-tags {
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.hero-copy .hero-image-tags {
+  margin-top: 18px;
 }
 
 .hero-image-tags span {
@@ -1253,9 +1254,13 @@ textarea {
 
 .visit-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr;
   gap: 32px;
   align-items: start;
+}
+
+.visit-section {
+  padding-top: 0;
 }
 
 .visit-copy {
@@ -1269,7 +1274,7 @@ textarea {
 }
 
 .contact-section {
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 .contact-section h3 {
@@ -1282,6 +1287,7 @@ textarea {
 }
 
 .visit-copy h2 {
+  margin-top: 48px;
   font-size: clamp(2rem, 2vw + 0.6rem, 2.8rem);
 }
 
@@ -1431,6 +1437,10 @@ textarea {
 }
 
 @media (max-width: 720px) {
+  .container {
+    width: min(100% - 24px, 1180px);
+  }
+
   .nav-toggle {
     display: flex;
   }
@@ -1461,6 +1471,76 @@ textarea {
 
   .brand {
     min-width: 0;
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brand-copy strong {
+    font-size: 1.5rem;
+  }
+
+  .brand-copy small {
+    font-size: 0.55rem;
+  }
+
+  .hero {
+    padding: 22px 0 24px;
+  }
+
+  .hero-copy {
+    padding: 18px 0 8px;
+  }
+
+  .hero-copy h1 {
+    width: 100%;
+    font-size: clamp(2.65rem, 13vw, 4.2rem);
+    line-height: 0.88;
+  }
+
+  .hero-heading-line {
+    white-space: normal;
+  }
+
+  .lead-line {
+    display: inline;
+  }
+
+  .lead-line + .lead-line::before {
+    content: " ";
+  }
+
+  .cta-group {
+    padding-left: 0;
+  }
+
+  .cta-group .button {
+    width: 100%;
+  }
+
+  .hero-card {
+    padding: 10px;
+  }
+
+  .hero-favorites .hero-card-copy {
+    padding: 20px 10px 10px;
+  }
+
+  .hero-photo {
+    min-height: 230px;
+  }
+
+  .info-row,
+  .card-footer {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .card-footer strong {
+    margin-left: auto;
   }
 
   .about-section,
@@ -1468,6 +1548,10 @@ textarea {
   .experience-section,
   .visit-section {
     padding: 80px 0;
+  }
+
+  .visit-section {
+    padding-top: 0;
   }
 
   .two-col {
@@ -1482,6 +1566,46 @@ textarea {
   .footer-wrap {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .contact-block {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .contact-block strong,
+  .gift-card-link-wrap {
+    margin-left: auto;
+    text-align: right;
+    white-space: normal;
+  }
+
+  .menu-photo-sheet {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .menu-section-block {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .menu-section-title {
+    font-size: clamp(1.7rem, 9vw, 2.4rem);
+  }
+
+  .menu-item-line {
+    font-size: 0.92rem;
+  }
+
+  .wine-entry {
+    display: block;
+  }
+
+  .price-group,
+  .wine-context {
+    display: block;
+    margin-top: 2px;
   }
 }
 
